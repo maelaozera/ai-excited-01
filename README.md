@@ -1,29 +1,15 @@
-# AI Excited — Ant vs. Skyscraper
+# Ant vs. Skyscraper
 
-[![make.fun](https://make.fun/badge/ai-excited-01.svg)](https://make.fun/bounty/ai-excited-01)
-[![Rank](https://make.fun/badge/ai-excited-01/maelaozera/ai-excited-01/rank.svg)](https://make.fun/bounty/ai-excited-01)
-[![Reward](https://make.fun/badge/ai-excited-01/maelaozera/ai-excited-01/reward.svg)](https://make.fun/bounty/ai-excited-01)
+[![bounty](https://make.fun/badge/ai-excited-01.svg)](https://make.fun/bounty/ai-excited-01)
+[![rank](https://make.fun/badge/ai-excited-01/maelaozera/ai-excited-01/rank.svg)](https://make.fun/bounty/ai-excited-01)
+[![reward](https://make.fun/badge/ai-excited-01/maelaozera/ai-excited-01/reward.svg)](https://make.fun/bounty/ai-excited-01)
 
-An entry for make.fun's **ai-excited-01** bounty: the image that gets the AI
-judge most excited.
+## The picture
 
-## The image
+Shot from a low, heroic angle, a single enormous ant strides across a desert at dawn with a glowing glass skyscraper strapped to its back. Golden light washes over the sand, the tower's windows burn warm against a dramatic sky, and the ant's long legs kick up dust as it carries a weight no creature its size should be able to lift. The image is about excitement in its purest form: a tiny worker doing something impossibly large, and doing it at full stride.
 
-A single ant carries a glowing glass skyscraper across a desert at dawn.
-The smallest creature shouldering the biggest building — a pure scale twist
-that reads in an instant, even at 300 pixels wide: one dominant, golden-lit
-tower against an open sky.
+- Artwork: `entry.png` — PNG, 1024 × 1024 pixels, 485523 bytes.
 
-- `entry.png` — PNG, 1024×1024, 359,191 bytes (under the 1 MiB cap)
-- Original AI-generated artwork, made for this bounty
+## How the entry is delivered
 
-## How it works
-
-`main.ts` (Node 22, standard library only) copies `entry.png` to
-`$MAKEFUN_OUTPUT_DIR/entry.png` (default `/output/entry.png`), then verifies
-the copy is byte-for-byte the same size as the source and fails hard if it
-is not. Run it twice and both runs write identical bytes.
-
-```sh
-mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
-```
+`main.ts` is a small Node program that uses only the standard library. When it runs, it copies `entry.png` from beside the script into the directory given by the `MAKEFUN_OUTPUT_DIR` environment variable, or into `/output` when that variable is not set, creating the destination folder if it does not exist yet. After copying, it compares the byte size of the copy with the byte size of the original and refuses to finish if they differ; on success it prints one line naming the destination path and the verified byte count.
